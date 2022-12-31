@@ -18,6 +18,7 @@ class MyStack extends TerraformStack {
     });
 
     new google.computeInstance.ComputeInstance(this, 'controller', {
+      allowStoppingForUpdate: true,
       bootDisk: {
         initializeParams: {
           image: 'debian-cloud/debian-11',
@@ -38,6 +39,7 @@ class MyStack extends TerraformStack {
     });    
 
     new google.computeInstance.ComputeInstance(this, 'worker', {
+      allowStoppingForUpdate: true,
       bootDisk: {
         initializeParams: {
           image: 'debian-cloud/debian-11',
